@@ -4,7 +4,7 @@ import App from '../../src/components/app';
 // use 'describe' to group together similar tests
 describe('App', () => {
 
-  // use 'it' to test a single attribute of a target
+  // use 'it' to test a single attribute of a target. returns in terminal like a report.
   it ('shows the correct text', () => {
 
     // create an instance of App
