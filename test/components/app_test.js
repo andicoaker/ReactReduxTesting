@@ -29,4 +29,7 @@ describe('App', () => {
   //
   // });
 
+  it('shows a comment list', () => {
+    expect(component.find('.comment-list')).to.exist;
+  });
 });
