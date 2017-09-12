@@ -9,7 +9,7 @@ describe('Comments Reducer', () => {
     // expect(commentReducer()).to.be.instanceof(Array);
 
     // checks to see if it is absolute identical object, asserting the array will be empty
-    expect(commentReducer()).to.eql([]);
+    expect(commentReducer(undefined, {})).to.eql([]);
 
   });
 
