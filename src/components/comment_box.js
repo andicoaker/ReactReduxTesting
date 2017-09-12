@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 // import all action creators from the actions file and save as variable, actions
-import * as actions from '..actions';
+import * as actions from '../actions';
 
 // upgraded comment_box from component to a container
 
