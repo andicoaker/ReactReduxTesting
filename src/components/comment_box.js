@@ -7,18 +7,25 @@ export default class CommentBox extends Component {
     this.state = { comment: '' };
   }
 
-  handleChange(event){
+  handleChange(event) {
     this.setState({ comment: event.target.value });
+  }
+
+  // handleSubmit tells the browser to clear the textarea upon clicking submit button
+  handleSubmit(event) {
+    event.preventDefault();
+
+    this.setState({ comment: '' });
   }
 
   render () {
     return (
-      <div className="comment-box">
+      <form onSubmit={this.handleSubmit.bind(this)} className="comment-box">
         <textarea
           value={this.state.comment}
           onChange={this.handleChange.bind(this)} />
-        <button>Submit Comment</button>
-      </div>
+        <button action="submit">Submit Comment</button>
+      </form>
     );
   }
 }
