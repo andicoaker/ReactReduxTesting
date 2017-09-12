@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+// import all action creators from the actions file and save as variable, actions
+import * as actions from '..actions';
 
-export default class CommentBox extends Component {
+// upgraded comment_box from component to a container
+
+class CommentBox extends Component {
   constructor(props) {
     super(props);
 
@@ -14,7 +19,8 @@ export default class CommentBox extends Component {
   // handleSubmit tells the browser to clear the textarea upon clicking submit button
   handleSubmit(event) {
     event.preventDefault();
-
+    // call action creator and pass it the current comment
+    this.props.saveComment(this.state.comment);
     this.setState({ comment: '' });
   }
 
@@ -29,3 +35,7 @@ export default class CommentBox extends Component {
     );
   }
 }
+
+// pass in null because we don't care about any piece of state in this instance
+// pass entire actions object to automatically bind all action creators to the comment_box container. now we have access as this.props
+export default connect(null, actions)(CommentBox);
